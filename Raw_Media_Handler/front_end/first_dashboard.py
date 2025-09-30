@@ -26,7 +26,7 @@ class OYADashboard(ctk.CTk):
         dynamic_center_window(self)  # 👈 Apply center logic here
 
         self.grid_columnconfigure(1, weight=1)
-        self.grid_rowconfigure(0, weight=1)
+        self.grid_rowconfigure(0, weight=1) #what
 
         # Sidebar
         self.sidebar = ctk.CTkFrame(self, corner_radius=0, fg_color="#1a1a1a", width=200)
