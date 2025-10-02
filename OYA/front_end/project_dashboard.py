@@ -6,6 +6,8 @@ import nltk, yake
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+import matplotlib.pyplot as plt
+# from back_end.create_folders import project_time (later)
 
 """
 OYA Dashboard Theme:
@@ -78,8 +80,19 @@ class ProjectDashboard(ctk.CTk):
             text_color="#00BFFF"
         ).pack(pady=10)
 
+        # Progress Chart Tinkering
+        days_since_start = [a for a in range(1, 100) if a > 0]
+        parts_completed = [a for a in range(1, 100) if a > 0]
+
+
+        pltlib = plt.plot(days_since_start, parts_completed)
+        pltlib.xlabel("Days Worked On Project")
+        pltlib.ylabel("Progess % (Out of 100)")
+        pltlib.yticks(10)
+        pltlib.show()
+
         # Folder Outline View and clickability
-        with open("last_project_path.txt", "r") as file:
+        with open("OYA\\last_project_path.txt", "r") as file:
             project_folder = file.read().split("\\")[1]
 
         folder_title = ctk.CTkLabel(
@@ -105,7 +118,7 @@ class ProjectDashboard(ctk.CTk):
             anchor="w"
         ).pack(pady=5)
 
-        with open("custom_folders.txt", "r") as file:
+        with open("OYA\\custom_folders.txt", "r") as file:
             subfolders = file.read().split(", ")
         
         for folder in subfolders:

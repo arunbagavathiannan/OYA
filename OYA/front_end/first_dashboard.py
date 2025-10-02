@@ -102,7 +102,7 @@ class OYADashboard(ctk.CTk):
     def create_new_project(self):
         try:
             self.destroy()
-            subprocess.run(["python", "back_end//create_folders.py"])
+            subprocess.run(["python", "OYA//back_end//create_folders.py"])
         except Exception as e:
             messagebox.showerror("Error", f"Couldn't run create_folder.py\n\n{str(e)}")
 
