@@ -85,11 +85,10 @@ class ProjectDashboard(ctk.CTk):
         parts_completed = [a for a in range(1, 100) if a > 0]
 
 
-        pltlib = plt.plot(days_since_start, parts_completed)
-        pltlib.xlabel("Days Worked On Project")
-        pltlib.ylabel("Progess % (Out of 100)")
-        pltlib.yticks(10)
-        pltlib.show()
+        plt.plot(days_since_start, parts_completed)
+        plt.xlabel("Days Worked On Project")
+        plt.ylabel("Progess % (Out of 100)")
+        plt.show()
 
         # Folder Outline View and clickability
         with open("OYA\\last_project_path.txt", "r") as file:
@@ -300,4 +299,7 @@ def run():
 if __name__ == "__main__":
     run()
 
-# NEXT STEP: SET THE RATIO FOR POWER WORDS USING NAMES, CHANGE FOR TITLE AND DESCRIPTION RESPECTIVELY, DONE WITH SEO, MOVE ONTO THUMBNAIL OPTIMIZER
+# NEXT STEP: HOW TO ADD MATPLOTLIB GRAPH RIGHT UNDERNEATH PROGRESS BAR LABEL
+
+# HOW TO INTEGRATE YT CHANNEL STATS INTO OYA
+#
