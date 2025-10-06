@@ -6,7 +6,9 @@ import nltk, yake
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
-import matplotlib.pyplot as plt
+import pandas as pd
+import random as rd
+
 # from back_end.create_folders import project_time (later)
 
 """
@@ -83,12 +85,15 @@ class ProjectDashboard(ctk.CTk):
         # Progress Chart Tinkering
         days_since_start = [a for a in range(1, 100) if a > 0]
         parts_completed = [a for a in range(1, 100) if a > 0]
+        empty_list = []
+        with open("OYA\\progress_bar_info.csv", "w") as f:
+            f.write(empty_list)
 
 
-        plt.plot(days_since_start, parts_completed)
-        plt.xlabel("Days Worked On Project")
-        plt.ylabel("Progess % (Out of 100)")
-        plt.show()
+        self.pb = ctk.CTkProgressBar(sidebar, width="220", height='14', fg_color="#1a1a1a", progress_color="#00b3ff")
+        csv_info = pd.read_csv("progress_bar_info.csv")
+        self.pb.configure()
+
 
         # Folder Outline View and clickability
         with open("OYA\\last_project_path.txt", "r") as file:
@@ -299,7 +304,6 @@ def run():
 if __name__ == "__main__":
     run()
 
-# NEXT STEP: HOW TO ADD MATPLOTLIB GRAPH RIGHT UNDERNEATH PROGRESS BAR LABEL
+# NEXT STEP: PROGRESSBAR + pandas information into CSV
 
 # HOW TO INTEGRATE YT CHANNEL STATS INTO OYA
-#
