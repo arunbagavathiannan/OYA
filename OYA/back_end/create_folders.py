@@ -115,7 +115,7 @@ def confirm_and_create():
 
     messagebox.showinfo("Success", f"{len(folders)} folders created at:\n{proj_path}")
     app.destroy()
-    subprocess.run(["python", "OYA//front_end//project_dashboard.py"])
+    subprocess.run(["python", r"OYA//front_end//project_dashboard.py"])
 
 
 def setup_ui():

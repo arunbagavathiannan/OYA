@@ -82,21 +82,8 @@ class ProjectDashboard(ctk.CTk):
             text_color="#00BFFF"
         ).pack(pady=10)
 
-        # Progress Chart Tinkering
-        days_since_start = [a for a in range(1, 100) if a > 0]
-        parts_completed = [a for a in range(1, 100) if a > 0]
-        empty_list = []
-        with open("OYA\\progress_bar_info.csv", "w") as f:
-            f.write(empty_list)
-
-
-        self.pb = ctk.CTkProgressBar(sidebar, width="220", height='14', fg_color="#1a1a1a", progress_color="#00b3ff")
-        csv_info = pd.read_csv("progress_bar_info.csv")
-        self.pb.configure()
-
-
         # Folder Outline View and clickability
-        with open("OYA\\last_project_path.txt", "r") as file:
+        with open(r"last_project_path.txt", "r") as file:
             project_folder = file.read().split("\\")[1]
 
         folder_title = ctk.CTkLabel(
@@ -122,7 +109,7 @@ class ProjectDashboard(ctk.CTk):
             anchor="w"
         ).pack(pady=5)
 
-        with open("OYA\\custom_folders.txt", "r") as file:
+        with open("custom_folders.txt", "r") as file:
             subfolders = file.read().split(", ")
         
         for folder in subfolders:
