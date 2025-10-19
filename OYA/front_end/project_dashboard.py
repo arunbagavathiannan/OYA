@@ -291,6 +291,6 @@ def run():
 if __name__ == "__main__":
     run()
 
-# NEXT STEP: PROGRESSBAR + pandas information into CSV
+# NEXT STEP: PROGRESSBAR + pandas information into CSV (after getting that data of progress from a lot later on)
 
 # HOW TO INTEGRATE YT CHANNEL STATS INTO OYA

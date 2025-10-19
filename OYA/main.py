@@ -1,2 +1,1 @@
-from back_end import create_folders
-import front_end.project_dashboard as project_dashboard
+# file for running the program as a whole 
