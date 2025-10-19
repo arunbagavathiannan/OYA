@@ -1,11 +1,14 @@
 import os, sys, json, shutil, subprocess
+from OYA.utils.paths import BASE, BACK_END, FRONT_END, STATE
 import customtkinter as ctk
 from tkinter import filedialog, messagebox
 from Template import folder_templates, video_metadata
 
+os.chdir(BASE)
+
 # Constants
 METADATA_FILE = "metadata.json"
-LAST_PATH_FILE = "last_project_path.txt"
+LAST_PATH_FILE = STATE / "last_project_path.txt"
 
 # Global Widgets/State Containers
 custom_folder_entries = []
@@ -79,8 +82,10 @@ def confirm_and_create():
     if not pn or not fp:
         messagebox.showerror("Error", "Project name and folder path are required.")
         return
-
-    proj_path = os.path.join(fp, f"OYA_{pn}")
+    
+    
+    with open("last_project_path.txt", "w") as file:
+        file.write()
     while os.path.exists(proj_path):
         pn += "1"
         proj_path = os.path.join(fp, f"OYA_{pn}")
